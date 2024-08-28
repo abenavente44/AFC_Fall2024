@@ -112,9 +112,14 @@ students[0].age = 20;
 console.log(students);
 
 // 24. Loop through the `students` array and log each student's name to the console
+students.forEach(element =>{
+  console.log(element)
+})
+
 for (let i = 0; i < students.length; i++) {
     console.log(students[i].name);
 }
+
 
 // 25. Write a nested if statement that checks if the first student's age is greater than 18, and if so, 
 // checks if the student is also named "John", then logs "Adult John" to the console
