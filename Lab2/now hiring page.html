@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Now Hiring Page</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <a href="/Lab2/index.html" class="info-back">Home</a>
+        <a href="/Lab2/menu.html">Menu</a>
+        <a href="/Lab2/now hiring page.html">Now Hiring</a>
+       <br>
+       <br>
+      <form action="" method="get">
+        <label>First Name:
+        <input type="text" name="fname" id="fname" required required maxlength="20" required minlength="1">
+        </label>
+        <br>
+        <label for="lname">Last Name:
+        <input type="text" name="lname" id="lname" required maxlength="20" required minlength = "1">
+        </label>
+        <br>
+        <label for="Address">Address 1:</label>
+        <input type="text" name="Address" id="Address" required> 
+        </label>
+        <br>
+        <label for="Address2">Address 2:</label>
+        <input type="text" name="Address2" id="Address2" class ="optional"> 
+        </label>
+        <br>
+        <label for="City">City:</label>
+        <input type="Text" name="city" id="city" required maxlength = "30" required> 
+        </label>
+        <label>State:
+            <select name="state" id="state">
+               <option value="tx">TX</option>
+               <option value="ca">CA</option>
+               <option value="ny">NY</option>
+            </select>
+            </label>
+        <br>
+            <label> Age: 
+            <input type="number" name ="age" id="" min ="21" max = "99">
+             </input>
+             </label>
+        <br>
+            <label> Phone: 
+            <input type="tel"pattern="\d{3}-\d{3}-\d{4}" name ="phone" id="phone" placeholder="111-222-3333" required>
+             </input>
+             </label>
+        <br>
+        <label for="email">Email:</label>
+        <input type="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" name="email" id="email" placeholder="example@domain.com" > 
+      
+        </label>
+         <br>
+         <label for="password">Password:
+        <input type="password" id="password" name="password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[\W_]).{8,12}"
+        title="Password must be 8-12 characters long, include at least one number, one uppercase letter, one lowercase letter, and one special character (e.g., !@#$%^&*)."
+        placeholder="Enter your password">
+         </label>
+         <br>
+         <label>
+            Marital Status:
+            <input type="radio" name="isMarried" id="status" value = "married"> Married
+            <input type="radio" name="isMarried" id="status" value = "single" checked> Single
+            <input type="radio" name="isMarried" id="status" value = "complicated"> Complicated
+         </label>
+         <br>
+         <label> Favorite Colors:
+         <input type="checkbox" name="color1" id="color1" value = "blue"> Blue
+         <input type="checkbox" name="color2" id="color2" value = "red"> Red
+         <input type="checkbox" name="color3" id="color3" value = "yellow"> Yellow
+         <input type="checkbox" name="color4" id="color4" value = "green"> green
+         <input type="checkbox" name="color5" id="color5" value = "orange"> Orange
+         </label>
+         <br>
+        <label for="description">Please enter information about yourself (Max 30 characters):
+        <br>
+         <textarea name = "description" id ="description" rows = "4" maxlength = "30"></textarea>
+         </label>
+         <br>
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+      </form>
+        
+        <script src="" async defer></script>
+    </body>
+</html>
