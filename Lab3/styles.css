@@ -1,0 +1,180 @@
+/* Basic Selectors: */
+/* 1. Apply a red background to all paragraphs --> */
+
+p{
+    background-color: red; 
+}
+
+/* Class Selectors: */
+ /* 2. Apply a blue text color to elements with the class `blue-text`*/
+ /* i tag with a class of fa-solid*/
+p.blue-text{
+    color: blue;
+   
+   }
+/* ID Selectors: */
+/* 3. Apply a green border to the element with the id `unique-element` */
+ #unique-element{
+     border:2px solid green
+    
+    }
+    
+/* Descendant Selectors: */
+/* <!-- 4. Apply a font size of 20px to all <span> elements inside <div> --> */
+div {
+ font-size:20px;
+
+}
+
+/* Attribute Selectors: */
+/* <!-- 5. Apply a yellow background to all input elements with type="text" --> */
+ 
+input[type= text]{
+background-color: yellow;
+
+}
+
+/* Text Color: */
+/* <!-- 6. Change the text color of all <h1> elements to purple --> */
+h1{
+  color: purple;
+
+}
+/* Background Color: */
+/* <!-- 7. Change the background color of all <div> elements to light blue --> */
+
+div {
+    background-color: blue;
+   
+   }
+/* Background Image: */
+   /* <!-- 8. Apply a background image to the body element --> */
+   #image_container{
+    background-image: url('./dantaco.png'); 
+   
+}
+
+/* Background Repeat: */
+/* <!-- 9. Prevent the background image from repeating --> */
+#image_container{
+    /* background-image: url('./dantaco.png');  */
+    background-repeat:no-repeat; 
+    background-position: center; 
+}
+
+/* Opacity: */
+/* <!-- 10. Set the opacity of all <div> elements to 0.5 --> */
+div {
+     opacity: 0.5; 
+   
+   }
+
+/* Font Family: */
+/* <!-- 11. Change the font family of all <p> elements to Arial --> */
+p{
+ 
+    font-family: Arial;
+}
+
+/* Font Size: */
+/* <!-- 12. Change the font size of all <h2> elements to 24px --> */
+h2{
+    font-size: 24px;
+  
+  } 
+
+  /* Font Weight: */
+  /* <!-- 13. Make the text of all <p> elements bold --> */
+p{
+  font-weight: bold
+
+}
+/* Text Alignment: */
+/* <!-- 14. Center align all <h3> elements --> */
+h3{
+
+   text-align: center;
+
+}
+/* Text Decoration: */
+/* <!-- 15. Remove underlines all links --> */
+
+a{ 
+
+ text-decoration: none;
+
+}
+
+/* Margins: */
+/* <!-- 16. Add a 20px margin to all <div> elements --> */
+div {
+   
+   margin: 20px; 
+
+}
+
+/* Padding: */
+/* <!-- 17. Add a 10px padding to all <div> elements --> */
+div{
+
+    padding: 10px;
+}
+
+/* Borders: */
+/* <!-- 18. Add a solid, 2px black border to all <div> elements --> */
+div{
+
+    border: black solid 2px;
+    
+}
+/* Width and Height: */
+/* <!-- 19. Set the width of all <img> elements to 200px and height to 150px --> */
+#image_container{
+    width: 200px;
+    height: 150px; 
+}
+
+/* Box Shadow: */
+/* <!-- 20. Add a shadow to all <div> elements --> */
+div{
+    
+  box-shadow: 5px 10px #888888
+
+}
+/* LAYOUT */
+/* Display Property: */
+/* <!-- 21. Change the display property of all <span> elements to block --> */
+div span {
+
+   display: block; 
+}
+
+/* Position Property: */
+/* <!-- 22. Position a <div> element at the top-right corner of the page --> */
+#top-right-div {
+    position: absolute; 
+    top: 0;
+    right: 0;
+}
+
+/* Float Property: */
+/* <!-- 23. Float a <div> element to the left --> */
+
+#float-left-div {
+    float: left; 
+    position: absolute;
+    bottom: 300px
+}
+
+/* Flexbox: */
+/* <!-- 24. Use flexbox to center align items inside a container --> */
+.container{
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+}
+
+
+
+
+   
