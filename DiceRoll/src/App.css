@@ -1,0 +1,44 @@
+
+h1 {
+  color: black;  
+}
+h2 {
+  color: black;  
+}
+body {
+  background-color: teal;  
+  margin: 0; /* Remove default margin */
+ 
+}
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.dice-icon {
+  color: rgb(194, 7, 7); 
+  font-size: 100px; 
+  margin: 0 25px; 
+}
+
+.button {
+  color: black; 
+  background-color: green; 
+  border: 2px solid black; 
+  border-radius: 50%; /* Make the button circular */
+  width: 80px; /* Set a fixed width */
+  height: 60px; /* Set a fixed height */
+  padding: 0; /* Remove padding to maintain circular shape */
+  cursor: pointer; 
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.button:hover {
+  background-color: darkgreen; 
+  border-color: darkgreen; 
+}
+
+
