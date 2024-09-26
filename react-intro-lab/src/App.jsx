@@ -1,10 +1,9 @@
-
 import CardContainer from './components/CardContainer';
 import Greetings from './Components/Greetings';
 import UserCard from './Components/UserCard';
 
 const App = () => {
-  const name = "Alex"; 
+ const name = "Alex"; 
   const users = [
     { name: "Bob", age: 30 },
     { name: "Charlie", age: 35 },

@@ -1,11 +1,7 @@
 
 const CardContainer = ({ children }) => {
-  const containerStyle = {
-    border: '2px solid',
-    padding: '20px',
-  };
 
-  return <div style={containerStyle}>{children}</div>;
+  return <div style={{border: "2px solid", padding: "20px"}}>{children}</div>;
 };
 
 export default CardContainer;
