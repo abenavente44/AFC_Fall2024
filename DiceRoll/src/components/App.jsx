@@ -14,8 +14,8 @@ import "../App.css"
 
 
 const App = () => {
-  const [dice1, setDice1] = useState(0);
-  const [dice2, setDice2] = useState(0);
+  const [dice1, setDice1] = useState(2);
+  const [dice2, setDice2] = useState(2);
   const [shouldRoll, setShouldRoll] = useState(false);
 
   const rollDice = () => {
@@ -30,7 +30,7 @@ const App = () => {
       setDice2(randomNum2);
       setShouldRoll(false);
     }
-  }, [shouldRoll]);
+  },[shouldRoll]);
 
   return (
     <div>
