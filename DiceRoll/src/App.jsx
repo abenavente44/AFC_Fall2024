@@ -16,21 +16,21 @@ import "./App.css"
 const App = () => {
   const [dice1, setDice1] = useState(0);
   const [dice2, setDice2] = useState(0);
-  //const [shouldRoll, setShouldRoll] = useState(false);
+  const [shouldRoll, setShouldRoll] = useState(false);
 
   const rollDice = () => {
-  //  setShouldRoll(true);
-  //};
+   setShouldRoll(true);
+  };
 
- // useEffect(() => {
-    //if (shouldRoll) {
+  useEffect(() => {
+    if (shouldRoll) {
       const randomNum1 = getRandomNumber();
       const randomNum2 = getRandomNumber();
       setDice1(randomNum1);
       setDice2(randomNum2);
-      //setShouldRoll(false);
-   // }
-  };//,[shouldRoll]);
+      setShouldRoll(false);
+   }
+  },[shouldRoll]);
 
   return (
     <div>
