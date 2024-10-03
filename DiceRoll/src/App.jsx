@@ -8,29 +8,29 @@
 //Your dice results must match the dice icons.
 //Use useEffect() to prevent infinite re-rendering.
 import React, { useState, useEffect } from 'react'
-import { getRandomNumber } from '../helper'
-import Dice from './Dice'
-import "../App.css"
+import { getRandomNumber } from './helper'
+import Dice from './components/Dice'
+import "./App.css"
 
 
 const App = () => {
-  const [dice1, setDice1] = useState(2);
-  const [dice2, setDice2] = useState(2);
-  const [shouldRoll, setShouldRoll] = useState(false);
+  const [dice1, setDice1] = useState(0);
+  const [dice2, setDice2] = useState(0);
+  //const [shouldRoll, setShouldRoll] = useState(false);
 
   const rollDice = () => {
-    setShouldRoll(true);
-  };
+  //  setShouldRoll(true);
+  //};
 
-  useEffect(() => {
-    if (shouldRoll) {
+ // useEffect(() => {
+    //if (shouldRoll) {
       const randomNum1 = getRandomNumber();
       const randomNum2 = getRandomNumber();
       setDice1(randomNum1);
       setDice2(randomNum2);
-      setShouldRoll(false);
-    }
-  },[shouldRoll]);
+      //setShouldRoll(false);
+   // }
+  };//,[shouldRoll]);
 
   return (
     <div>
