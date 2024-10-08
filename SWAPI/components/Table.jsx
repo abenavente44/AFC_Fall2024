@@ -1,5 +1,6 @@
-import React from 'react';
-import '../src/index.css';
+import React from 'react'
+import '../src/index.css'
+
 //the prop data from people is being passed no need to import
 const Table = ({ data }) => {
   return (
