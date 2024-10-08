@@ -68,6 +68,8 @@ setValue (event.target.name, event.target.value)
     <input type="password" {...register('password')} id='password'  onChange={handleChange}/>
     {errors.password && <span> {errors.password.message}</span>}
     <button type='submit'>Submit</button>
+    <br />
+    <button type="reset" onClick={()=>reset()}>Reset</button>
     </form>
     </>
   )
