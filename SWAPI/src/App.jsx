@@ -1,10 +1,9 @@
-
-import React, { useState, useEffect } from "react"
-import axios from "axios"
-import Table from "../components/Table"
-import { Button, Stack } from "@mui/material"
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import Table from "../components/Table";
+import { Button, Stack } from "@mui/material";
 //people is initialized with empty array
-//endpoint setup using axios 
+//endpoint setup using axios
 //when showTable is true the table component will be rendered and value of people is passed to table as a data prop
 const App = () => {
   const [people, setPeople] = useState([]);
@@ -28,8 +27,7 @@ const App = () => {
     setPeople([]);
   };
 
-  useEffect(() => {
-  }, []);
+  useEffect(() => {}, []);
 
   return (
     <div className="app">
