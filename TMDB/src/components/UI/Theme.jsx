@@ -5,21 +5,20 @@ import Box from "@mui/material/Box";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
 
-// Create the base theme
 const theme = createTheme({
   palette: {
     salmon: {
-      light: "#FF7F50", // Light salmon color
-      main: "#FF5733", // Main salmon color
-      dark: "#C43E28", // Dark salmon color
-      contrastText: "#fff", // Text color for better contrast
+      light: "#FF7F50", 
+      main: "#FF5733", 
+      dark: "#C43E28", 
+      contrastText: "#fff",
     },
   },
 });
 
 // UsingAugmentColor component to display colors
 export const UsingAugmentColor = () => {
-  const theme = useTheme(); // Access the theme
+  const theme = useTheme(); 
 
   return (
     <Stack sx={{ gap: 2, alignItems: "center" }}>
@@ -50,5 +49,4 @@ export const UsingAugmentColor = () => {
   );
 };
 
-// Export the theme as default
 export default theme;

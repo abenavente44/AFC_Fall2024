@@ -68,7 +68,7 @@ export default function NavBar({ onSearch }) {
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="sticky" sx={{ backgroundColor: "salmon.main" }}>
+      <AppBar sx={{ backgroundColor: "salmon.main" }}>
         <Toolbar>
           <Link // use Link and onClick to call goToHome
             size="large"

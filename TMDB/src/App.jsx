@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import NavBar from "./components/NavBar"; // Import your NavBar
+import NavBar from "./components/NavBar"; // Import NavBar
 import Results from "./components/Results"; // Component for displaying movie results
 import Error from "./components/Error"; // Component for handling error display
 import axios from "axios";
@@ -31,8 +31,8 @@ function App() {
         page: "1",
       },
       headers: {
-        accept: "application/json",
-        Authorization: `Bearer ${VITE_TMDB_API_TOKEN}`
+      accept: "application/json",
+      Authorization: `Bearer ${VITE_TMDB_API_TOKEN}`
       },
     };
 

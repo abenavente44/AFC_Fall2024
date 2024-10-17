@@ -1,6 +1,6 @@
 import React from "react";
 import Grid from "@mui/material/Grid";
-import MovieCard from "./Card"; // Adjust the import path as necessary
+import MovieCard from "./Card"; 
 
 export default function Results({ movies }) {
   return (

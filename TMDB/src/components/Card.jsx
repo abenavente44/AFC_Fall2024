@@ -14,11 +14,11 @@ export default function MovieCard({ movie }) {
     : "../src/assets/MightyMouse.jpg";
 
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ maxWidth: 380 }}>
       <CardActionArea>
         <CardMedia
           component="img"
-          height="400"
+          height="500"
           image={posterImage}
           alt={title}
         />
@@ -27,7 +27,7 @@ export default function MovieCard({ movie }) {
             {title}
           </Typography>
           <Typography variant="body2" sx={{ color: "text.secondary" }}>
-            {overview.length > 100
+            {overview.length > 400
               ? `${overview.substring(0, 100)}...`
               : overview}
           </Typography>
