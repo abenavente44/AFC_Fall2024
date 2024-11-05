@@ -1,0 +1,22 @@
+# We have updated this configuration to point at the docker postgres instance
+# Credentials must match the docker compose file
+# Look in the Test / Resource directory for the testing application.yaml
+spring:
+  application:
+    name: playground
+
+  datasource:
+    url: jdbc:postgresql://localhost:5436/playground_jpa
+    driver-class-name: org.postgresql.Driver
+    username: playground_dev
+    password: playground_dev12
+  jpa:
+    generate-ddl: false
+    hibernate:
+      ddl-auto: none
+  server:
+    port: 8080
+
+  flyway:
+    enabled: true
+    locations: classpath:db/migration

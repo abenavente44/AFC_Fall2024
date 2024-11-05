@@ -1,0 +1,16 @@
+services:
+  postgres-db:
+    container_name: playground_jpa
+    image: postgres # use latest official postgres version
+    restart: always
+    environment:
+      POSTGRES_USER: playground_dev
+      POSTGRES_PASSWORD: playground_dev12
+      POSTGRES_DB: playground_jpa
+      POSTGRES_HOST_AUTH_METHOD: password
+    ports:
+      - "5436:5432"
+
+volumes:
+  postgresql_data:
+    driver: local
