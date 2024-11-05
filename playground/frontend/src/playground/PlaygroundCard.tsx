@@ -145,7 +145,7 @@ const PlaygroundCard = ({ playgroundList, setPlaygroundList }: PlaygroundCardPro
                             <Table sx={{ minWidth: 650 }} aria-label="playground table">
                                 <TableHead>
                                     <TableRow>
-                                        {/*<TableCell>Id</TableCell>*/}
+                                        <TableCell>Id</TableCell>
                                         <TableCell>Location</TableCell>
                                         <TableCell>Description</TableCell>
                                         <TableCell>Rating</TableCell>
@@ -155,7 +155,7 @@ const PlaygroundCard = ({ playgroundList, setPlaygroundList }: PlaygroundCardPro
                                 <TableBody>
                                     {playgroundList.map((item) => (
                                         <TableRow key={item.id}>
-                                            {/*<TableCell>{item.id}</TableCell>*/}
+                                            <TableCell>{item.id}</TableCell>
                                             <TableCell>{item.location}</TableCell>
                                             <TableCell>{item.description}</TableCell>
                                             <TableCell>{renderRatingStars(item.rating)}</TableCell>
