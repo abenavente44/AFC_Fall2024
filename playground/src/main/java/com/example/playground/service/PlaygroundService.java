@@ -17,16 +17,15 @@ public class PlaygroundService {
     @Autowired
     private PlaygroundRepository playgroundRepository;
 
-//    public Playground findPlaygroundById(Long id) {
-//        return playgroundRepository.findById(id).get();
-//    }
-
-    public Playground findPlaygroundByLocation(String location) {
-        return playgroundRepository.findByLocation(location);
+    public Playground findPlaygroundById(Long id) {
+        return playgroundRepository.findById(id).get();
     }
 
-    public List<Playground> findAllPlayground() {
-        return playgroundRepository.findAll();
+    public List<Playground> findAllPlayground(String city) {
+        if (city != null) {
+            return playgroundRepository.findAll();
+        }
+        return playgroundRepository.findByAddress(city);
     }
 
 

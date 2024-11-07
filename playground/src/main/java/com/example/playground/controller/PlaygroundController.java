@@ -16,31 +16,28 @@ public class PlaygroundController {
     public PlaygroundController(PlaygroundService playgroundService) {
         this.playgroundService = playgroundService;
     }
+
     //    @GetMapping("/playground")
-//    public ResponseEntity<List<Playground>> getPlayground() {
-//        List<Playground> playgrounds = playgroundService.findAllPlayground();
-//        return new ResponseEntity<>(playgrounds, HttpStatus.OK);
-//
+//    public List<Playground> getPlayground(@RequestParam(required = false) String city) {
+//        return playgroundService.findAllPlayground(city);
 //    }
+        @GetMapping("/playground")
+    public ResponseEntity<List<Playground>> getPlayground(@RequestParam(required = false) String city) {
+        List<Playground> playgrounds = playgroundService.findAllPlayground(city);
+        return new ResponseEntity<>(playgrounds, HttpStatus.OK);
+
+    }
+
+
 //    @GetMapping("/playground/{playgroundId}")
 //    public ResponseEntity<Playground> getPlaygroundById(@PathVariable Long playgroundId) {
 //        Playground playgrounds = playgroundService.findPlaygroundById(playgroundId);
 //        return new ResponseEntity<>(playgrounds, HttpStatus.OK);
 //    }
-    @GetMapping("/playground")
-    public List<Playground> getPlayground() {
-    return playgroundService.findAllPlayground();
-    }
-
-//   @GetMapping("/playground/{playgroundId}")
-//   public Playground getPlaygroundById(@PathVariable Long playgroundId) {
-//       return playgroundService.findPlaygroundById(playgroundId);
-//   }
-
-    @GetMapping("/playground/{playgroundLocation}")
-    public Playground getPlaygroundByLocation(@PathVariable String playgroundLocation) {
-        return playgroundService.findPlaygroundByLocation(playgroundLocation);
-    }
+   @GetMapping("/playground/{playgroundId}")
+   public Playground getPlaygroundById(@PathVariable Long playgroundId) {
+       return playgroundService.findPlaygroundById(playgroundId);
+   }
 
     @PostMapping("/playground")
     public ResponseEntity<Playground> createPlayground(@RequestBody Playground playground) {
@@ -53,14 +50,6 @@ public class PlaygroundController {
 
         // Log the incoming inventory details
         System.out.println(myPlayground);
-
-        // Find the existing inventory by ID
-//        Playground existingPlayground = playgroundService.findPlaygroundById(playgroundId);
-
-//        if (existingPlayground == null) {
-//            // Return 404 Not Found if the inventory does not exist
-//            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
-//        }
 
         // Update the inventory using the service
         Playground updatedPlayground = playgroundService.updatePlayground(playgroundId, myPlayground);

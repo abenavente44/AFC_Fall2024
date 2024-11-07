@@ -3,7 +3,7 @@ import { Playground } from "../../types.ts";
 import {
     addPlayground,
     deletePlayground,
-    fetchByIdPlayground,
+    fetchByIdPlayground, fetchByLocation,
     updatePlayground
 } from "./PlaygroundService.ts";
 import PlaygroundForm from "./PlaygroundForm";
@@ -63,7 +63,7 @@ const PlaygroundCard = ({ playgroundList, setPlaygroundList }: PlaygroundCardPro
         setLoading(true);
         setError('');
         try {
-            const item = await fetchByIdPlayground(location);
+            const item = await fetchByLocation(location);
             setSearchedItem(item);
         } catch (error) {
             console.error('Failed to fetch item:', error);
@@ -113,7 +113,6 @@ const PlaygroundCard = ({ playgroundList, setPlaygroundList }: PlaygroundCardPro
             </>
         );
     };
-
     return (
         <Box sx={{ display: 'flex', height: '100vh' }}>
             <Box sx={{ flex: 1, padding: 2 }}>
@@ -121,6 +120,7 @@ const PlaygroundCard = ({ playgroundList, setPlaygroundList }: PlaygroundCardPro
             </Box>
 
             <Box sx={{ flex: 1, display: 'flex', flexDirection: 'column', padding: 2,  color: "blue" }}>
+
                 <Box sx={{ flex: '0 0 auto' }}>
                     <h3>Playground Management</h3>
                     <PlaygroundForm
@@ -145,20 +145,24 @@ const PlaygroundCard = ({ playgroundList, setPlaygroundList }: PlaygroundCardPro
                             <Table sx={{ minWidth: 650 }} aria-label="playground table">
                                 <TableHead>
                                     <TableRow>
-                                        <TableCell>Id</TableCell>
+
                                         <TableCell>Location</TableCell>
+                                        <TableCell>City</TableCell>
                                         <TableCell>Description</TableCell>
                                         <TableCell>Rating</TableCell>
+                                        <TableCell>Date</TableCell>
                                         <TableCell>Actions</TableCell>
                                     </TableRow>
                                 </TableHead>
                                 <TableBody>
                                     {playgroundList.map((item) => (
+
                                         <TableRow key={item.id}>
-                                            <TableCell>{item.id}</TableCell>
                                             <TableCell>{item.location}</TableCell>
+                                            <TableCell>{item.city}</TableCell>
                                             <TableCell>{item.description}</TableCell>
                                             <TableCell>{renderRatingStars(item.rating)}</TableCell>
+                                            <TableCell>{item.date}</TableCell>
                                             <TableCell>
                                                 <Button
                                                     variant="outlined"

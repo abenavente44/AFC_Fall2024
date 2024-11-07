@@ -28,9 +28,11 @@ const renderRatingStars = (rating: number) => {
         </>
     );
 };
+
 //playground detail holds func component with props item and onClose
 const PlaygroundDetail: React.FC<PlaygroundDetailProps> = ({item, onClose}) => {
     if (!item) return null;
+    console.log(item.city);
     return (
         <Box sx={{padding: 2, backgroundColor: '#f5f5f5', borderRadius: 1}}>
     <TableContainer component={Paper}>
@@ -38,9 +40,11 @@ const PlaygroundDetail: React.FC<PlaygroundDetailProps> = ({item, onClose}) => {
             <TableBody>
                 {/*<TableCell> <strong>ID:</strong> {item.id}</TableCell>*/}
                 <TableCell><strong>Location:</strong> {item.location}</TableCell>
+                <TableCell><strong>City:</strong> {item.city}</TableCell>
                 <TableCell><strong>Description:</strong> {item.description}</TableCell>
                 <TableCell><strong>Rating:</strong> {renderRatingStars(item.rating)}</TableCell>
                 <TableCell><strong>Feedback:</strong> {item.feedback}</TableCell>
+                <TableCell><strong>Date:</strong> {item.date}</TableCell>
                 <TableCell>
                     <Button variant="outlined" onClick={onClose} sx={{mt: 2}}>
                                 Close

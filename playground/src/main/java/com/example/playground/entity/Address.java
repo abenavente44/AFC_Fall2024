@@ -1,9 +1,11 @@
 package com.example.playground.entity;
 
 import jakarta.persistence.*;
-@Entity
-@Table(name= "addresses")
 
+
+
+@Entity
+@Table(name= "address")
 public class Address {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -12,9 +14,6 @@ public class Address {
     private String state;
     private String zip;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "playground_id")
-    private Playground playground;
 
     public Long getId() {
         return id;
@@ -48,12 +47,5 @@ public class Address {
         this.zip = zip;
     }
 
-    public Playground getPlayground() {
-        return playground;
-    }
-
-    public void setPlayground(Playground playground) {
-        this.playground = playground;
-    }
 }
 

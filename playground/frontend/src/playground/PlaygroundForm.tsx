@@ -6,6 +6,8 @@ import Button from "@mui/material/Button";
 import StarIcon from '@mui/icons-material/Star';
 import StarBorderIcon from '@mui/icons-material/StarBorder';
 
+
+
 type PlaygroundFormProps = {
     onAdd: (newItem: Playground) => void;
     onUpdate: (updatedItem: Partial<Playground>) => void;
@@ -21,6 +23,7 @@ const PlaygroundForm = ({ onAdd, onUpdate, itemToEdit, onSearch }: PlaygroundFor
     const [feedback, setFeedback] = useState('');
     const [date, setDate] = useState(new Date());
     const [error, setError] = useState('');
+    const[city, setCity] =useState("");
 
     useEffect(() => {
         if (itemToEdit) {
@@ -29,6 +32,7 @@ const PlaygroundForm = ({ onAdd, onUpdate, itemToEdit, onSearch }: PlaygroundFor
             setLocation(itemToEdit.location);
             setRating(itemToEdit.rating);
             setFeedback(itemToEdit.feedback);
+            setCity(itemToEdit.feedback)
             setDate(new Date(itemToEdit.date));
         } else {
             resetForm();
@@ -41,6 +45,7 @@ const PlaygroundForm = ({ onAdd, onUpdate, itemToEdit, onSearch }: PlaygroundFor
         setDescription('');
         setRating(0);
         setFeedback('');
+        setCity('');
         setDate(new Date());
         setError('');
     }, []);
@@ -71,11 +76,11 @@ const PlaygroundForm = ({ onAdd, onUpdate, itemToEdit, onSearch }: PlaygroundFor
     };
 
     const handleSearch = () => {
-        if (id <= 0) {
+        if (!city) {
             setError('Please enter a valid ID to search.');
             return;
         }
-        onSearch(id);
+        onSearch(city);
     };
 
     // Handle star rating selection
@@ -97,6 +102,13 @@ const PlaygroundForm = ({ onAdd, onUpdate, itemToEdit, onSearch }: PlaygroundFor
                     label="Location"
                     value={location}
                     onChange={(e) => setLocation(e.target.value)}
+                    required
+                    sx={{ m: 1, flex: 1, minWidth: '150px', backgroundColor: 'white' }}
+                />
+                <TextField
+                    label="City"
+                    value={city}
+                    onChange={(e) => setCity(e.target.value)}
                     required
                     sx={{ m: 1, flex: 1, minWidth: '150px', backgroundColor: 'white' }}
                 />

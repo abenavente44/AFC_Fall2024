@@ -5,7 +5,7 @@ export function fetchPlayground(): Promise<Playground[]> {
     return axios.get<Playground[]>('/api/playground').then((response: AxiosResponse<Playground[]>) => response.data);
 }
 
-export function fetchByIdPlayground(location: string): Promise<Playground> {
+export function fetchByLocation(location: string): Promise<Playground> {
     return axios.get<Playground>(`/api/playground/${location}`).then((response: AxiosResponse<Playground>) => response.data);
 }
 export function addPlayground(newItem: Playground): Promise<Playground> {

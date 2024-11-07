@@ -16,13 +16,14 @@ public class Playground {
     private String feedback;
     private Instant date;
 
-   @OneToMany (mappedBy = "playground", fetch = FetchType.LAZY)
-   private List<Address> addresses;
+//   @OneToMany (mappedBy = "playground", fetch = FetchType.LAZY)
+    @ManyToOne
+   private Address address;
 
     public Playground() {
     }
 
-    public Playground(Long id, String description, int rating, String location, Instant date) {
+    public Playground(Long id, String description, int rating, String location, String feedback, Instant date, Address address) {
 
         this.id = id;
         this.description = description;
@@ -30,6 +31,7 @@ public class Playground {
         this.rating = rating;
         this.feedback = feedback;
         this.date = Instant.now();
+        this.address = address;
     }
 
     public Long getId() {
@@ -68,6 +70,12 @@ public class Playground {
     }
     public void setFeedback(String feedback) {
         this.feedback = feedback;
+    }
+    public Address getAddress() {
+        return address;
+    }
+    public void setAddress(Address address) {
+        this.address = address;
     }
 
 }
