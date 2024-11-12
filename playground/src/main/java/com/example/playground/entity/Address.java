@@ -3,9 +3,8 @@ package com.example.playground.entity;
 import jakarta.persistence.*;
 
 
-
 @Entity
-@Table(name= "address")
+@Table(name = "address")
 public class Address {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

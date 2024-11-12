@@ -1,59 +1,82 @@
-import React from 'react';
-import {Playground} from "../../types.ts";
-import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
-import StarIcon from "@mui/icons-material/Star";
-import StarBorderIcon from "@mui/icons-material/StarBorder";
-import TableCell from "@mui/material/TableCell";
-import Paper from "@mui/material/Paper";
-import Table from "@mui/material/Table";
-import TableBody from "@mui/material/TableBody";
-import TableContainer from "@mui/material/TableContainer";
+import * as React from 'react';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import Typography from '@mui/material/Typography';
+import CardActionArea from '@mui/material/CardActionArea';
+import Button from '@mui/material/Button';
+import {Playground} from '../../types.ts';  // Assuming Playground type exists in your types
 
 type PlaygroundDetailProps = {
-    item: Playground | null; // The searched item
-    onClose: () => void; // Function to close the detail view
-};
-// Function to display stars based on rating
-const renderRatingStars = (rating: number) => {
-    return (
-        <>
-            {[1, 2, 3, 4, 5].map((star) => (
-                star <= rating ? (
-                    <StarIcon key={star} sx={{ color: 'gold' }} />
-                ) : (
-                    <StarBorderIcon key={star} sx={{ color: 'gold' }} />
-                )
-            ))}
-        </>
-    );
+    item: Playground; // The playground item to display
+    onClose: () => void; // Function to close the detail view and reset the form
 };
 
-//playground detail holds func component with props item and onClose
 const PlaygroundDetail: React.FC<PlaygroundDetailProps> = ({item, onClose}) => {
-    if (!item) return null;
-    console.log(item.city);
+    // Function to display stars based on rating
+    const renderRatingStars = (rating: number) => {
+        return (
+            <>
+                {[1, 2, 3, 4, 5].map((star) => (
+                    star <= rating ? (
+                        <span key={star} style={{color: 'gold'}}>★</span>
+                    ) : (
+                        <span key={star} style={{color: 'gold'}}>☆</span>
+                    )
+                ))}
+            </>
+        );
+    };
+
     return (
-        <Box sx={{padding: 2, backgroundColor: '#f5f5f5', borderRadius: 1}}>
-    <TableContainer component={Paper}>
-        <Table sx={{ minWidth: 650 }} aria-label="playground table">
-            <TableBody>
-                {/*<TableCell> <strong>ID:</strong> {item.id}</TableCell>*/}
-                <TableCell><strong>Location:</strong> {item.location}</TableCell>
-                <TableCell><strong>City:</strong> {item.city}</TableCell>
-                <TableCell><strong>Description:</strong> {item.description}</TableCell>
-                <TableCell><strong>Rating:</strong> {renderRatingStars(item.rating)}</TableCell>
-                <TableCell><strong>Feedback:</strong> {item.feedback}</TableCell>
-                <TableCell><strong>Date:</strong> {item.date}</TableCell>
-                <TableCell>
-                    <Button variant="outlined" onClick={onClose} sx={{mt: 2}}>
-                                Close
+        <Card sx={{
+            maxWidth: 300, // Reduced width of the card
+            marginBottom: 2,
+            bgcolor: '#424242', // Dark grey background for the card
+            color: 'white', // White text for contrast
+            borderRadius: 2, // Optional: rounded corners for a smoother look
+            boxShadow: 3, // Optional: slight shadow for card depth
+        }}>
+            <CardActionArea>
+                {/* Reduced height of the image */}
+                <CardMedia
+                    component="img"
+                    height="300" // Reduced image height
+                    image={item.image || "../src/assets/playground.png"} // Default image if no image provided
+                    alt={item.location}
+                />
+                <CardContent>
+                    <Typography gutterBottom variant="h6" component="div">
+                        {item.location}
+                    </Typography>
+                    <Typography variant="body2" sx={{color: 'white', fontSize: '0.875rem'}}>
+                        <strong>City:</strong> {item.address.city}
+                    </Typography>
+                    <Typography variant="body2" sx={{color: 'white', fontSize: '0.875rem'}}>
+                        <strong>State:</strong> {item.address.state}
+                    </Typography>
+                    <Typography variant="body2" sx={{color: 'white', fontSize: '0.875rem'}}>
+                        <strong>Zip:</strong> {item.address.zip}
+                    </Typography>
+                    <Typography variant="body2" sx={{color: 'white', fontSize: '0.875rem'}}>
+                        <strong>Description:</strong> {item.description}
+                    </Typography>
+                    <Typography variant="body2" sx={{color: 'white', fontSize: '0.875rem'}}>
+                        <strong>Rating:</strong> {renderRatingStars(item.rating)}
+                    </Typography>
+                    <Typography variant="body2" sx={{color: 'white', fontSize: '0.875rem'}}>
+                        <strong>Feedback:</strong> {item.feedback}
+                    </Typography>
+                    <Typography variant="body2" sx={{color: 'white', fontSize: '0.875rem'}}>
+                        <strong>Date:</strong> {item.date}
+                    </Typography>
+                    {/* Close Button to reset form */}
+                    <Button variant="outlined" onClick={onClose} sx={{marginTop: 2}}>
+                        Close
                     </Button>
-                </TableCell>
-            </TableBody>
-        </Table>
-    </TableContainer>
-        </Box>
+                </CardContent>
+            </CardActionArea>
+        </Card>
     );
 };
 
