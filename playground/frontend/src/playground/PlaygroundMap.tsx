@@ -10,7 +10,7 @@ const MapComponent = () => {
     useEffect(() => {
         // Initialize the map only once when the component mounts
         const map = tt.map({
-            key: '', // Replace with your actual API key
+            key: 'my API key', // Replace with your actual API key
             container: mapContainerRef.current,
             center: [-97.4637, 31.0566], // Set initial center of the map [longitude, latitude]
             zoom: 8, // Set initial zoom level
