@@ -10,13 +10,13 @@ const MapComponent = () => {
     useEffect(() => {
         // Initialize the map only once when the component mounts
         const map = tt.map({
-            key: 'kLgdHUHHCstzGyFbhJhZMMw16lKc1GxW', // Replace with your actual API key
+            key: '', // Replace with your actual API key
             container: mapContainerRef.current,
             center: [-97.4637, 31.0566], // Set initial center of the map [longitude, latitude]
             zoom: 8, // Set initial zoom level
         });
 
-        // Create a rating function to display stars based on the rating score
+
         const renderRating = (rating: number) => {
             let stars = '';
             for (let i = 0; i < 5; i++) {

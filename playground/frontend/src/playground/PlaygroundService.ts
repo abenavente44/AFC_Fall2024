@@ -21,9 +21,7 @@ export function fetchPlayground(city: string | null): Promise<Playground[]> {
         });
 }
 
-// This function sends a request to create a new Playground
 export function addPlayground(newItem: Playground): Promise<Playground> {
-    // Logging the item for debugging
     console.log('Adding new playground:', newItem);
 
     return axios
@@ -42,13 +40,11 @@ export function addPlayground(newItem: Playground): Promise<Playground> {
         });
 }
 
-// Update Playground (modified to avoid modifying data)
 export function updatePlayground(
    id: number,
     updatedItem: Playground  // Accept the entire updated item (like addPlayground)
 ): Promise<Playground> {
 
-    // Logging the item for debugging
     console.log('Updating playground with ID:', id);
     console.log('Updated item:', updatedItem);
 

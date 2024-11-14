@@ -5,7 +5,7 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import StarIcon from '@mui/icons-material/Star';
 import StarBorderIcon from '@mui/icons-material/StarBorder';
-import {addPlayground, updatePlayground} from './PlaygroundService.ts'; // Assuming the service is in a separate file
+import {addPlayground, updatePlayground} from './PlaygroundService.ts';
 
 type PlaygroundFormProps = {
     onAdd: (newItem: Playground) => void;

@@ -46,7 +46,6 @@ const PlaygroundCard = ({playgroundList, setPlaygroundList}: PlaygroundCardProps
         date: new Date(),
     });
 
-    // Add a new playground
     const addRow = async () => {
         setLoading(true);
 
@@ -67,13 +66,12 @@ const PlaygroundCard = ({playgroundList, setPlaygroundList}: PlaygroundCardProps
         };
 
         try {
-            // Call backend to add playground
+
             const addedItem = await addPlayground(newPlayground);
 
             // Re-fetch playground list after adding the new item
             fetchPlaygroundList();
 
-            // Clear form fields
             resetForm();
         } catch (error) {
             console.error('Failed to add playground:', error);
@@ -83,7 +81,6 @@ const PlaygroundCard = ({playgroundList, setPlaygroundList}: PlaygroundCardProps
         }
     };
 
-    // Fetch playground list from the backend
     const fetchPlaygroundList = async () => {
         setLoading(true);
         setError('');
@@ -115,7 +112,6 @@ const PlaygroundCard = ({playgroundList, setPlaygroundList}: PlaygroundCardProps
         }
     };
 
-    // Reset form fields
     const resetForm = () => {
         setFormData({
             location: '',
@@ -129,7 +125,6 @@ const PlaygroundCard = ({playgroundList, setPlaygroundList}: PlaygroundCardProps
         });
     };
 
-    // Handle editing a playground item
     const handleEdit = (item: Playground) => {
         setEditingItem(item);
         setFormData({
@@ -144,7 +139,6 @@ const PlaygroundCard = ({playgroundList, setPlaygroundList}: PlaygroundCardProps
         });
     };
 
-    // Remove a playground
     const removeRow = async (id: number) => {
         setLoading(true);
         try {
@@ -158,7 +152,6 @@ const PlaygroundCard = ({playgroundList, setPlaygroundList}: PlaygroundCardProps
         }
     };
 
-    // Render rating stars
     const renderRatingStars = (rating: number) => (
         <>
             {[1, 2, 3, 4, 5].map((star) => (
@@ -170,13 +163,11 @@ const PlaygroundCard = ({playgroundList, setPlaygroundList}: PlaygroundCardProps
             ))}
         </>
     );
-
-    // Search by city
     const searchCity = async (searchQuery: string) => {
         setLoading(true);
         setError('');
         try {
-            const items = await fetchPlayground(); // Get all playgrounds
+            const items = await fetchPlayground();
             const filteredItems = items.filter(item =>
                 item.address.city.toLowerCase().includes(searchQuery.toLowerCase())
             );

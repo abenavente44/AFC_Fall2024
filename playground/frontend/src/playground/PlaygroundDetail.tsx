@@ -5,11 +5,11 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import CardActionArea from '@mui/material/CardActionArea';
 import Button from '@mui/material/Button';
-import {Playground} from '../../types.ts';  // Assuming Playground type exists in your types
+import {Playground} from '../../types.ts';
 
 type PlaygroundDetailProps = {
-    item: Playground; // The playground item to display
-    onClose: () => void; // Function to close the detail view and reset the form
+    item: Playground;
+    onClose: () => void;
 };
 
 const PlaygroundDetail: React.FC<PlaygroundDetailProps> = ({item, onClose}) => {
@@ -30,11 +30,11 @@ const PlaygroundDetail: React.FC<PlaygroundDetailProps> = ({item, onClose}) => {
 
     return (
         <Card sx={{
-            maxWidth: 300, // Reduced width of the card
+            maxWidth: 300,
             marginBottom: 2,
             bgcolor: '#424242', // Dark grey background for the card
-            color: 'white', // White text for contrast
-            borderRadius: 2, // Optional: rounded corners for a smoother look
+            color: 'white',
+            borderRadius: 2,
             boxShadow: 3, // Optional: slight shadow for card depth
         }}>
             <CardActionArea>
